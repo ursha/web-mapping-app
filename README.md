@@ -59,7 +59,8 @@
 - [ ] Add TileServer GL for raster + vector style hosting
 - [ ] Integrate PMTiles and serve `.pmtiles` via TileServer
 - [ ] Display PMTiles via Mapbox GL JS with vector source
-
+## 🌐 Duckdb integration
+- [] Integrate with duckdb
 ---
 
 ## 🚀 Running the App Locally
