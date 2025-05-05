@@ -45,9 +45,10 @@
 - [ ] Add `/login`, `/register`, and `/me` endpoints
 - [ ] Add `/tilejson.json` for PMTiles metadata
 - [ ] Serve static frontend from backend (`StaticFiles`)
+- [ ] Add `/h3-cells` API to return hexagons intersecting a bbox or polygon
 
 ### 🗄️ Database (PostgreSQL + PostGIS)
-- [] Install PostGIS
+- [ ] Install PostGIS
 - [ ] Create spatial tables for layers
 - [ ] Add indexes on geometry columns
 - [ ] Create views or materialized views for tile serving
@@ -59,8 +60,20 @@
 - [ ] Add TileServer GL for raster + vector style hosting
 - [ ] Integrate PMTiles and serve `.pmtiles` via TileServer
 - [ ] Display PMTiles via Mapbox GL JS with vector source
-## 🌐 Duckdb integration
-- [] Integrate with duckdb
+
+### 🔷 H3 Hexagon Integration
+- [ ] Install `h3-py` Python library
+- [ ] Generate H3 hexagons from bbox or polygon on the backend
+- [ ] Serve hexagons as GeoJSON via FastAPI
+- [ ] Add layer to frontend map to visualize H3 cells
+- [ ] Optional: store H3 cells in DuckDB/PostGIS for analysis
+
+### 🦆 DuckDB Integration
+- [ ] Set up DuckDB with Python (`duckdb` package)
+- [ ] Load GeoParquet or CSV files into DuckDB
+- [ ] Run spatial queries using `ST_Intersects`, H3 functions, etc.
+- [ ] Create FastAPI endpoints to query DuckDB and return results
+
 ---
 
 ## 🚀 Running the App Locally
@@ -71,18 +84,3 @@
 cd backend
 source venv/bin/activate
 uvicorn main:app --reload --port 8001
-
-
-
-## 🚀 Running the App Locally
-
-###  Start the FastAPI Backend
-
-```bash
-cd backend
-source venv/bin/activate
-uvicorn main:app --reload --port 8001
-
-### Start the Frontend (Static Server)
-cd frontend
-python3 -m http.server 8000 --bind 0.0.0.0
