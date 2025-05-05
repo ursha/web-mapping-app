@@ -40,3 +40,17 @@
 ---
 
 > To mark a task complete, just change `[ ]` to `[x]`.
+
+
+## 🚀 Running the App Locally
+
+### 1. Start the FastAPI Backend
+
+```bash
+cd backend
+source venv/bin/activate
+uvicorn main:app --reload --port 8001
+
+
+cd frontend
+python3 -m http.server 8000 --bind 0.0.0.0
