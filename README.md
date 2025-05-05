@@ -3,13 +3,13 @@
 ## ✅ Task Checklist
 
 ### 🧱 General Setup
-- [ ] Create HTML structure with `#map` container
-- [ ] Link Mapbox GL JS CSS and JS via CDN
-- [ ] Add CSS to style the map container
+- [x] Create HTML structure with `#map` container
+- [x] Link Mapbox GL JS CSS and JS via CDN
+- [x] Add CSS to style the map container
 
 ### 🗺️ Map Initialization
-- [ ] Initialize Mapbox map (token, center, zoom, style)
-- [ ] Add map navigation controls (zoom, rotation)
+- [x] Initialize Mapbox map (token, center, zoom, style)
+- [x] Add map navigation controls (zoom, rotation)
 
 ### 🗂️ Layer Management
 - [ ] Add base map layers (streets, satellite, etc.)
