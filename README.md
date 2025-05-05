@@ -84,3 +84,6 @@
 cd backend
 source venv/bin/activate
 uvicorn main:app --reload --port 8001
+
+### 2. Start the mapbox map 
+python3 -m http.server 8000
