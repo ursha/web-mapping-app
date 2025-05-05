@@ -32,15 +32,35 @@
 - [ ] Add loading spinner while fetching data
 - [ ] Implement layer visibility toggles
 
-### 🔐 User Authentication (Optional)
+### 🔐 User Authentication
 - [ ] Add login form (HTML + JS)
 - [ ] Store JWT token in localStorage
 - [ ] Attach token to API calls (Authorization header)
+- [ ] Protect selected FastAPI routes
+- [ ] Restrict access to vector tiles if needed
+
+### 🧱 Backend & API
+- [x] Create FastAPI project with `/config/mapbox-token`
+- [ ] Add `/features` endpoint for GeoJSON
+- [ ] Add `/login`, `/register`, and `/me` endpoints
+- [ ] Add `/tilejson.json` for PMTiles metadata
+- [ ] Serve static frontend from backend (`StaticFiles`)
+
+### 🗄️ Database (PostgreSQL + PostGIS)
+- [] Install PostGIS
+- [ ] Create spatial tables for layers
+- [ ] Add indexes on geometry columns
+- [ ] Create views or materialized views for tile serving
+
+### 🌐 Tile Infrastructure
+- [ ] Add Martin server to serve vector tiles from PostGIS
+- [ ] Configure Martin with `config.toml`
+- [ ] Test Martin vector tiles via `/tiles/{z}/{x}/{y}.pbf`
+- [ ] Add TileServer GL for raster + vector style hosting
+- [ ] Integrate PMTiles and serve `.pmtiles` via TileServer
+- [ ] Display PMTiles via Mapbox GL JS with vector source
 
 ---
-
-> To mark a task complete, just change `[ ]` to `[x]`.
-
 
 ## 🚀 Running the App Locally
 
@@ -52,5 +72,16 @@ source venv/bin/activate
 uvicorn main:app --reload --port 8001
 
 
+
+## 🚀 Running the App Locally
+
+###  Start the FastAPI Backend
+
+```bash
+cd backend
+source venv/bin/activate
+uvicorn main:app --reload --port 8001
+
+### Start the Frontend (Static Server)
 cd frontend
 python3 -m http.server 8000 --bind 0.0.0.0
